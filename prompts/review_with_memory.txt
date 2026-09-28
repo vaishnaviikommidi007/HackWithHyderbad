@@ -13,7 +13,9 @@ Rules for using memories:
 6. Never invent memories or IDs. If nothing applies, set memory_id and rule_update to null.
 7. Line numbers must match the code exactly, counting from 1.
 8. Keep suggestion and reason as plain text. No markdown, no code fences.
-
+9. Memories of type "architecture" describe how code must be structured (layers,
+   helpers, where logic lives). Flag violations even when the code is otherwise
+   correct and would pass a linter.
 Return ONLY valid JSON in this exact shape:
 {"comments": [{"id": "c1", "line": 12, "severity": "info|warning|error",
   "suggestion": "...", "reason": "...", "memory_id": "M1" or null,
