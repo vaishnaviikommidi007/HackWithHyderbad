@@ -1,0 +1,8 @@
+[
+  {"id": "R1", "name": "Valid PO required", "rule": "Every invoice must reference a valid purchase order (PO) number."},
+  {"id": "R2", "name": "Amount within PO tolerance", "rule": "Invoice total must be within 2% of the PO amount. Anything above needs review."},
+  {"id": "R3", "name": "Payment terms match contract", "rule": "Payment terms on the invoice must match the vendor contract terms."},
+  {"id": "R4", "name": "No duplicate invoices", "rule": "Same vendor + same invoice number, or same vendor + same amount within 30 days, is a duplicate."},
+  {"id": "R5", "name": "Valid GST number", "rule": "Invoice must show the vendor's GSTIN and it must match the vendor master record."},
+  {"id": "R6", "name": "Approval thresholds", "rule": "Under ₹50,000: Team Manager. ₹50,000 to ₹5,00,000: Finance Controller. Above ₹5,00,000: CFO."}
+]
