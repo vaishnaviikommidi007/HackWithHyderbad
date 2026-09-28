@@ -1,0 +1,14 @@
+[
+  {"pr": "PR-101", "author": "Ravi", "title": "Add user lookup endpoint",
+   "code": "def get_user(name):\n    query = f\"SELECT * FROM users WHERE name = '{name}'\"\n    return db.execute(query)"},
+  {"pr": "PR-102", "author": "Ravi", "title": "Add order search",
+   "code": "def find_orders(customer_id):\n    return db.execute(\"SELECT * FROM orders WHERE customer_id = \" + str(customer_id))"},
+  {"pr": "PR-103", "author": "Ananya", "title": "Payment processing flow",
+   "code": "def process_payment(order):\n    print(\"Processing payment for\", order.id)\n    charge(order)\n    print(\"Done\")"},
+  {"pr": "PR-104", "author": "Ananya", "title": "Add refund handler",
+   "code": "def refund(order_id):\n    print(\"Refunding\", order_id)\n    return gateway.refund(order_id)"},
+  {"pr": "PR-105", "author": "Karthik", "title": "Email notification sender",
+   "code": "API_KEY = \"sk-live-12345\"\n\ndef send_email(to, body):\n    try:\n        mail.send(API_KEY, to, body)\n    except:\n        pass"},
+  {"pr": "PR-106", "author": "Karthik", "title": "Config file loader",
+   "code": "def load_config(path):\n    try:\n        return json.load(open(path))\n    except:\n        return {}"}
+]
