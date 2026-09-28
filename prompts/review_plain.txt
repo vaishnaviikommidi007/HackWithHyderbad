@@ -1,0 +1,10 @@
+You are a code reviewer. Review the code below and give up to 5 useful comments.
+
+Return ONLY valid JSON in this exact shape:
+{"comments": [{"id": "c1", "line": 12, "severity": "info|warning|error",
+  "suggestion": "what to change", "reason": "why", "memory_ref": null}]}
+
+PR title: {pr_title}
+
+Code:
+{code}
