@@ -62,3 +62,11 @@ def review_code(code: str, pr_title: str = "", memories: list[dict] | None = Non
                 last_err = e
                 time.sleep(1 + attempt)
     return {"comments": [], "error": f"Review failed: {last_err}"}
+if __name__ == "__main__":
+    code = 'def get_user(id):\n    try:\n        return db.find(id)\n    except:\n        pass'
+    fake_memories = [
+        {"type": "rule", "text": "All DB calls must catch specific exceptions and log them, never bare except."},
+        {"type": "feedback", "text": "Rejected: suggestion to rename 'id' to 'user_id' (team allows short names)."},
+    ]
+    print("PLAIN:", json.dumps(review_code(code), indent=2))
+    print("MEMORY:", json.dumps(review_code(code, memories=fake_memories), indent=2))
