@@ -79,7 +79,7 @@ def review_code(code: str, pr_title: str = "", memories: list[dict] | None = Non
                 last_err = e
                 time.sleep(1 + attempt)
     return {"comments": [], "error": f"Review failed: {last_err}"}
-if __name__ == "__main__":
+if _name_ == "_main_":
     code = 'var total = 0;\ntry {\n  total = compute();\n} catch (e) {}'
     memories = [
         {"type": "rule", "date": "2026-08-01", "accepted": 3, "rejected": 0,
